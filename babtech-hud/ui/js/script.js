@@ -11,20 +11,22 @@ window.addEventListener('message', function(event) {
                 locationElement.style.display = 'none';
             }
 
-            updateBar('health', Math.floor(event.data.health));
-            updateBar('armor', Math.floor(event.data.armor));
-            updateBar('food', Math.floor(event.data.food));
-            updateBar('water', Math.floor(event.data.water));
+            updateBar('health', Math.min(100, Math.floor(event.data.health)));
+            updateBar('armor', Math.min(100, Math.floor(event.data.armor)));
+            updateBar('food', Math.min(100, Math.floor(event.data.food)));
+            updateBar('water', Math.min(100, Math.floor(event.data.water)));
+
             const oxyBar = document.querySelector('.stat-bar.oxy');
             if (event.data.oxy > 0) {
                 oxyBar.style.display = 'block';
-                updateBar('oxy', Math.floor(event.data.oxy));
+                updateBar('oxy', Math.min(100, Math.floor(event.data.oxy)));
             } else {
                 oxyBar.style.display = 'none';
             }
         }
     }
 });
+
 
 function updateBar(stat, value) {
     const bar = document.querySelector(`.stat-bar.${stat}`);
