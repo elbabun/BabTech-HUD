@@ -1,0 +1,338 @@
+:root {
+    --bar-color: #00a3ff;
+    --bar-glow: #00a3ff80;
+    --icon-color: #ffffff;
+    --text-color: #ffffff;
+    --health-bar-color: #db0a0a; 
+    --armor-bar-color: #005eff; 
+    --food-bar-color: #e07800; 
+    --water-bar-color: #649af7;
+}
+
+#status-hud.hidden {
+    display: none !important;
+}
+
+
+
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+
+
+.stat-bar.oxy .stat-info {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 3vh;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.stat-bar.stamina .stat-info {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 62vh;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+
+
+
+
+.voice-microphe-icon-1 {
+    position: absolute;
+    width: 13.09px;
+    height: 18px;
+}
+
+.voice-elipse-2 {
+    text-align: center;
+    width: 100%;
+}
+
+.gasoline { text-align: center; font-family: ubuntu; color: white; font-size: 20px;}
+
+.gasometer {
+    position: absolute;
+    bottom: 19.2%; 
+    left: 8.55%;
+}
+
+
+
+#status-hud {
+    position: fixed;
+    bottom: 3.5vh;
+    left: 0.05vh;
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: bottom 0.3s ease-in-out, left 0.3s ease-in-out; 
+}
+
+.stat-bar.health .stat-bar {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
+.vehicle-entered .stats-container {
+    display: flex;
+    flex-direction: column;  
+    justify-content: flex-start;  
+    gap: 5px; 
+}
+
+.vehicle-entered .food,
+.vehicle-entered .water {
+    order: 1; 
+}
+
+.vehicle-entered .armor {
+    order: 2; 
+}
+
+.vehicle-entered .health {
+    order: 3; 
+}
+
+
+.hud-container {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.stats-container {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.vehicle-entered .stat-bar.health {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    left: 20px; 
+    top: 2.5vh; 
+}
+.vehicle-entered .stat-bar.armor {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    left: 238px;
+    top: 2.5vh; 
+}
+.vehicle-entered .stat-bar.water {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    left: 20px; 
+    top: -0.8vh; 
+}
+
+.vehicle-entered .stat-bar.food {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 5px;
+    position: absolute;
+    left: 120px; 
+    top: -0.8vh;
+}
+
+.vehicle-entered #status-hud {
+    left: 27vh;
+    bottom: 2.5vh;
+}
+
+
+.vehicle-entered .voice {
+    bottom: 20%;
+}
+
+
+
+.vehicle-entered .player-location {
+    left: 82px;
+    bottom: 20%;
+}
+
+.vehicle-entered .stats-container {
+    flex-direction: column;
+}
+
+.stat-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px;
+    transition: all 0.3s ease;
+}
+
+.stat-bar.food .bar-progress {
+    display: none;
+}
+
+.stat-bar.water .bar-progress {
+    display: none;
+}
+
+.stat-bar.oxy .bar-progress {
+    display: none;
+}
+
+.stat-bar:hover {
+    transform: translateX(2px);
+}
+
+.stat-info {
+    display: flex;
+    align-items: center;
+    min-width: 48px;
+}
+
+.stat-bar.oxy {
+    position: absolute;
+    right: -600px;
+    top: 35px;   
+}
+
+
+
+.stat-bar i {
+    font-size: 12px;
+    color: var(--icon-color);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%, rgba(44, 44, 44, 0.05) 100%);
+    padding: 4px 6px;
+    border-radius: 20px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+
+
+#carbelt {
+    margin-bottom: 22px;
+}
+
+.stat-info .value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+.bar-progress {
+    width: 100px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--bar-color);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--bar-glow);
+}
+
+.hidden {
+    display: none;
+}
+
+.voice, .player-location {
+    position: fixed;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    bottom: 8.5%;
+}
+
+.voice {
+    left: 33px;
+}
+
+.player-location {
+    left: 78px;
+}
+
+
+.health .bar-fill {
+    background-color: var(--health-bar-color);
+}
+
+.armor .bar-fill {
+    background-color: var(--armor-bar-color);
+}
+
+.food .bar-fill {
+    background-color: var(--food-bar-color);
+}
+
+.water .bar-fill {
+    background-color: var(--water-bar-color);
+}
+
+
+
+.player-id i, .player-location i {
+    font-size: 12px;
+    color: var(--icon-color);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    padding-right: 8px;
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.id-value, .location-value {
+    color: #fff;
+    margin-left: 0.01vh;
+}
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
