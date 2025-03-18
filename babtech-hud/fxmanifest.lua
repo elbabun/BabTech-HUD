@@ -1,5 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
+lua54 "yes"
+
 
 author 'Babun & Tech'
 name 'Hud'
@@ -10,6 +12,7 @@ client_scripts {
     'config.lua',
     'client.lua'
 }
+
 
 server_script 'server.lua'
 
