@@ -7,3 +7,6 @@ Config.ShowLocation = true
 Config.Unit = "KMH"   
 Config.Benzinaskim = "LegacyFuel"
 Config.ShowClassVehicleName = false
+Config.ui = {
+	showWeapons			= true,	
+}
