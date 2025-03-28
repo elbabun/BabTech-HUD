@@ -80,6 +80,7 @@ body {
 
 #status-hud {
     position: fixed;
+    display: flex;
     bottom: 3.5vh;
     left: 0.05vh;
     font-family: 'Rajdhani', sans-serif;
